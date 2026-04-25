@@ -1,7 +1,9 @@
 local modem1 = peripheral.wrap("modem_1") or error("modem1 not found attached", 0)
 local modem2 = peripheral.wrap("modem_2") or error("modem2 not found attached", 0)
 local modem3 = peripheral.wrap("modem_3") or error("modem3 not found attached", 0)
-modem.open(22)
+modem1.open(22)
+modem2.open(22)
+modem3.open(22)
 
 while true do
     local event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
