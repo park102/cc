@@ -43,7 +43,7 @@ local modem = peripheral.wrap("right")
 modem.open(22)
 
 modem.transmit(22,22,"turtle")
-while true do
+while not modem1d and not modem2d and not modem3d do
     local event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
     if channel == 22 and message == "modem1" then
         local modem1d = distance
@@ -53,9 +53,6 @@ while true do
     end
     if channel == 22 and message == "modem3" then
         local modem3d = distance
-    end
-    if modem1d and modem2d and modem3d then
-        break
     end
 end
 print(trilaterate(modem2d,modem1d,modem3d))

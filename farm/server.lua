@@ -11,5 +11,6 @@ while true do
         modem1.transmit(22,22,"modem1")
         modem2.transmit(22,22,"modem2")
         modem3.transmit(22,22,"modem3")
+        print("ping sent")
     end
 end
